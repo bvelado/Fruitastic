@@ -11,4 +11,6 @@ public class FruitData : ScriptableObject
     public int FruitSellPrice;
     public long GrowthDuration;
     public long Frequency;
+    public Sprite FruitIcon;
+    public Sprite SeedIcon;
 }

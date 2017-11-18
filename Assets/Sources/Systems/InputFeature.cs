@@ -4,6 +4,7 @@
     {
         Add(new HandleBuyFruitInputSystem(contexts));
         Add(new HandleBuyFruitSlotInputSystem(contexts));
+        Add(new HandleBuyVegetableInputSystem(contexts));
         Add(new CleanInputSystem(contexts));
     }
 }

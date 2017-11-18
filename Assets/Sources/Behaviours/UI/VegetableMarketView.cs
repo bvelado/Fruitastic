@@ -1,20 +1,18 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Button))]
-public class FruitMarketView : MonoBehaviour, IPlayerMoneyChangedListener {
+public class VegetableMarketView : MonoBehaviour, IPlayerMoneyChangedListener
+{
 
     [SerializeField]
-    private FruitData fruit;
+    private VegetableData vegetable;
 
     [SerializeField]
     private UIText text;
 
     [SerializeField]
     private InfoPanelView infoPanelView;
-
-    private BuyPageManager manager;
 
     private Button button;
 
@@ -24,28 +22,25 @@ public class FruitMarketView : MonoBehaviour, IPlayerMoneyChangedListener {
         button.onClick.AddListener(HandleButtonClicked);
 
         if (Contexts.sharedInstance.game.hasPlayerMoney)
-        PlayerMoneyChanged(Contexts.sharedInstance.game.playerMoney.Money);
+            PlayerMoneyChanged(Contexts.sharedInstance.game.playerMoney.Money);
 
         Contexts.sharedInstance.uI.CreateEntity().AddPlayerMoneyChanged(this);
     }
 
     private void Start()
     {
-        text.content = fruit.SeedBuyPrice.ToString();
+        text.content = vegetable.SeedBuyPrice.ToString();
         text.Apply();
-
-        manager = FindObjectOfType<BuyPageManager>();
     }
 
     private void HandleButtonClicked()
     {
-        //Contexts.sharedInstance.input.CreateEntity().AddBuyFruit(fruit);
-        infoPanelView.Display(fruit);
-        manager.SetSelected(null, ESelectMode.Buy);
+        //Contexts.sharedInstance.input.CreateEntity().AddBuyVegetable(vegetable);
+        infoPanelView.Display(vegetable);
     }
 
     public void PlayerMoneyChanged(long value)
     {
-
+        button.interactable = value > vegetable.SeedBuyPrice;
     }
 }

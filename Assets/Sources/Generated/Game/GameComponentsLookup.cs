@@ -22,9 +22,12 @@ public static class GameComponentsLookup {
     public const int PlayerMoney = 11;
     public const int Producing = 12;
     public const int Seed = 13;
-    public const int TickChanged = 14;
+    public const int Stored = 14;
+    public const int TickChanged = 15;
+    public const int Vegetable = 16;
+    public const int VegetableSlot = 17;
 
-    public const int TotalComponents = 15;
+    public const int TotalComponents = 18;
 
     public static readonly string[] componentNames = {
         "Buyable",
@@ -41,7 +44,10 @@ public static class GameComponentsLookup {
         "PlayerMoney",
         "Producing",
         "Seed",
-        "TickChanged"
+        "Stored",
+        "TickChanged",
+        "Vegetable",
+        "VegetableSlot"
     };
 
     public static readonly System.Type[] componentTypes = {
@@ -59,6 +65,9 @@ public static class GameComponentsLookup {
         typeof(PlayerMoneyComponent),
         typeof(ProducingComponent),
         typeof(SeedComponent),
-        typeof(TickChangedComponent)
+        typeof(StoredComponent),
+        typeof(TickChangedComponent),
+        typeof(VegetableComponent),
+        typeof(VegetableSlotComponent)
     };
 }

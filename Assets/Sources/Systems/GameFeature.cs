@@ -11,6 +11,7 @@ public class GameFeature : Feature {
         Add(new NotifyFruitSlotChangedSystem(contexts));
         Add(new GrowFruitSystem(contexts));
         Add(new ProduceFruitSystem(contexts));
+        Add(new GrowVegetableSystem(contexts));
     }
 
 }
