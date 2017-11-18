@@ -8,15 +8,27 @@
 //------------------------------------------------------------------------------
 public static class UIComponentsLookup {
 
-    public const int TickChanged = 0;
+    public const int Destroy = 0;
+    public const int FruitSlotChanged = 1;
+    public const int FruitSlotView = 2;
+    public const int PlayerMoneyChanged = 3;
+    public const int TickChanged = 4;
 
-    public const int TotalComponents = 1;
+    public const int TotalComponents = 5;
 
     public static readonly string[] componentNames = {
+        "Destroy",
+        "FruitSlotChanged",
+        "FruitSlotView",
+        "PlayerMoneyChanged",
         "TickChanged"
     };
 
     public static readonly System.Type[] componentTypes = {
+        typeof(DestroyComponent),
+        typeof(FruitSlotChangedComponent),
+        typeof(FruitSlotViewComponent),
+        typeof(PlayerMoneyChangedComponent),
         typeof(TickChangedComponent)
     };
 }

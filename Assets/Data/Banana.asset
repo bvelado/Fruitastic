@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fad214e8019b5040a59a947b4a6c019, type: 3}
+  m_Name: Banana
+  m_EditorClassIdentifier: 
+  Name: Banana
+  Description: Pellentesque dictum lacus nec lacus ornare iaculis. Aliquam dignissim
+    nisi id tincidunt euismod. Proin nec porta magna, eget egestas libero. In eget
+    mi in nisi dignissim accumsan. Aliquam erat volutpat. Vestibulum dignissim tellus
+    velit, id interdum eros imperdiet a. Pellentesque habitant morbi tristique senectus
+    et netus et malesuada fames ac turpis egestas. Aliquam imperdiet dapibus ipsum,
+    in rhoncus nisl sollicitudin ut.
+  SeedBuyPrice: 1920
+  SeedSellPrice: 480
+  FruitSellPrice: 320
+  GrowthDuration: 300
+  Frequency: 30

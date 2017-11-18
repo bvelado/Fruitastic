@@ -12,10 +12,15 @@ public class UIText : MonoBehaviour {
     public string content;
     [SerializeField]
     private List<string> styles = new List<string>();
-
+    [SerializeField]
     private TextMeshProUGUI text;
 
     private void Reset()
+    {
+        text = GetComponent<TextMeshProUGUI>();
+    }
+
+    private void OnEnable()
     {
         text = GetComponent<TextMeshProUGUI>();
     }
@@ -60,6 +65,7 @@ public class UIText : MonoBehaviour {
 
     public void Apply()
     {
-        text.text = Format(content);
+        if(content != null && text != null)
+            text.text = Format(content);
     }
 }

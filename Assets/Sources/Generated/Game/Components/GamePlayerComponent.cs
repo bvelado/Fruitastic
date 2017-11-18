@@ -9,30 +9,19 @@
 public partial class GameContext {
 
     public GameEntity playerEntity { get { return GetGroup(GameMatcher.Player).GetSingleEntity(); } }
-    public PlayerComponent player { get { return playerEntity.player; } }
-    public bool hasPlayer { get { return playerEntity != null; } }
 
-    public GameEntity SetPlayer(long newMoney) {
-        if (hasPlayer) {
-            throw new Entitas.EntitasException("Could not set Player!\n" + this + " already has an entity with PlayerComponent!",
-                "You should check if the context already has a playerEntity before setting it or use context.ReplacePlayer().");
+    public bool isPlayer {
+        get { return playerEntity != null; }
+        set {
+            var entity = playerEntity;
+            if (value != (entity != null)) {
+                if (value) {
+                    CreateEntity().isPlayer = true;
+                } else {
+                    entity.Destroy();
+                }
+            }
         }
-        var entity = CreateEntity();
-        entity.AddPlayer(newMoney);
-        return entity;
-    }
-
-    public void ReplacePlayer(long newMoney) {
-        var entity = playerEntity;
-        if (entity == null) {
-            entity = SetPlayer(newMoney);
-        } else {
-            entity.ReplacePlayer(newMoney);
-        }
-    }
-
-    public void RemovePlayer() {
-        playerEntity.Destroy();
     }
 }
 
@@ -46,25 +35,25 @@ public partial class GameContext {
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public PlayerComponent player { get { return (PlayerComponent)GetComponent(GameComponentsLookup.Player); } }
-    public bool hasPlayer { get { return HasComponent(GameComponentsLookup.Player); } }
+    static readonly PlayerComponent playerComponent = new PlayerComponent();
 
-    public void AddPlayer(long newMoney) {
-        var index = GameComponentsLookup.Player;
-        var component = CreateComponent<PlayerComponent>(index);
-        component.Money = newMoney;
-        AddComponent(index, component);
-    }
+    public bool isPlayer {
+        get { return HasComponent(GameComponentsLookup.Player); }
+        set {
+            if (value != isPlayer) {
+                var index = GameComponentsLookup.Player;
+                if (value) {
+                    var componentPool = GetComponentPool(index);
+                    var component = componentPool.Count > 0
+                            ? componentPool.Pop()
+                            : playerComponent;
 
-    public void ReplacePlayer(long newMoney) {
-        var index = GameComponentsLookup.Player;
-        var component = CreateComponent<PlayerComponent>(index);
-        component.Money = newMoney;
-        ReplaceComponent(index, component);
-    }
-
-    public void RemovePlayer() {
-        RemoveComponent(GameComponentsLookup.Player);
+                    AddComponent(index, component);
+                } else {
+                    RemoveComponent(index);
+                }
+            }
+        }
     }
 }
 

@@ -45,9 +45,9 @@ MonoBehaviour:
   - m_Name: Price
     m_HashCode: 93122669
     m_OpeningDefinition: <#00FF00>
-    m_ClosingDefinition: </color>
+    m_ClosingDefinition: ' KEK</color>'
     m_OpeningTagArray: 3c000000230000003000000030000000460000004600000030000000300000003e000000
-    m_ClosingTagArray: 3c0000002f000000630000006f0000006c0000006f000000720000003e000000
+    m_ClosingTagArray: 200000004b000000450000004b0000003c0000002f000000630000006f0000006c0000006f000000720000003e000000
   - m_Name: Progress
     m_HashCode: 1000125949
     m_OpeningDefinition: <#A015AE>

@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ffcc4178dea1ad94b96ac2fc5b8192e8, type: 3}
+  m_Name: PDT
+  m_EditorClassIdentifier: 
+  Name: P.D.T
+  Description: Pellentesque tortor dui, mollis et euismod quis, condimentum et eros.
+    Nullam non aliquam dolor. Cras volutpat, tortor sit amet lacinia feugiat, erat
+    dui vehicula orci, et lobortis orci nibh vitae tortor. Quisque semper maximus
+    ligula, vitae hendrerit odio luctus id. Vivamus euismod commodo consequat. Suspendisse
+    condimentum lobortis justo, id auctor tortor maximus ac. Donec lectus nulla, convallis
+    ac porta non, eleifend eu dolor. Maecenas at nunc scelerisque, accumsan justo
+    at, maximus tellus. Pellentesque non augue nec ante vulputate elementum. Suspendisse
+    dolor orci, sagittis eu aliquet nec, mattis ac erat. Mauris sodales convallis
+    velit eget commodo. Praesent sodales, erat eget laoreet commodo, diam nunc venenatis
+    ligula, eu fermentum urna dui ac purus. Integer egestas commodo ex, a semper leo
+    cursus at. Aenean eu sem leo. Duis feugiat, ante sed semper dictum, purus quam
+    ornare nunc, varius ultricies quam arcu in nisi.
+  SeedBuyPrice: 4
+  SeedSellPrice: 1
+  VegetableSellPrice: 0
+  GrowthDuration: 6000
