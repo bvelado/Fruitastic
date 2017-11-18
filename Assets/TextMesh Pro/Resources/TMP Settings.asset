@@ -8,7 +8,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: { fileID: -395462249, guid: 89f0137620f6af44b9ba852b4190e64e, type: 3}
+  m_Script: {fileID: -395462249, guid: 89f0137620f6af44b9ba852b4190e64e, type: 3}
   m_Name: TMP Settings
   m_EditorClassIdentifier: 
   m_enableWordWrapping: 1
@@ -18,10 +18,10 @@ MonoBehaviour:
   m_enableParseEscapeCharacters: 1
   m_missingGlyphCharacter: 0
   m_warningsDisabled: 0
-  m_defaultFontAsset: {fileID: 11400000, guid: 715b80e429c437e40867928a4e1fc975, type: 2}
+  m_defaultFontAsset: {fileID: 11400000, guid: 2bae3fd2f988df34eb4d2080fa2bdd4d, type: 2}
   m_defaultFontAssetPath: Fonts & Materials/
-  m_defaultFontSize: 36
-  m_defaultAutoSizeMinRatio: .5
+  m_defaultFontSize: 24
+  m_defaultAutoSizeMinRatio: 0.5
   m_defaultAutoSizeMaxRatio: 2
   m_defaultTextMeshProTextContainerSize: {x: 20, y: 5}
   m_defaultTextMeshProUITextContainerSize: {x: 200, y: 50}
@@ -32,7 +32,7 @@ MonoBehaviour:
     type: 2}
   m_defaultSpriteAssetPath: Sprite Assets/
   m_enableEmojiSupport: 1
-  m_defaultStyleSheet: {fileID: 11400000, guid: 54d1085f9a2fdea4587fcfc7dddcd4bc,
+  m_defaultStyleSheet: {fileID: 11400000, guid: d2c928aa0f722a6409ea8c9b14a0392c,
     type: 2}
   m_leadingCharacters: {fileID: 4900000, guid: 8d713940fcbede142ae4a33ea0062b33, type: 3}
   m_followingCharacters: {fileID: 4900000, guid: 312ba5b9e90627940866e19549a788cf,
