@@ -8,15 +8,21 @@
 //------------------------------------------------------------------------------
 public static class InputComponentsLookup {
 
+    public const int BuyFruit = 0;
+    public const int BuyFruitSlot = 1;
+    public const int Destroy = 2;
 
-
-    public const int TotalComponents = 0;
+    public const int TotalComponents = 3;
 
     public static readonly string[] componentNames = {
-
+        "BuyFruit",
+        "BuyFruitSlot",
+        "Destroy"
     };
 
     public static readonly System.Type[] componentTypes = {
-
+        typeof(BuyFruitComponent),
+        typeof(BuyFruitSlotComponent),
+        typeof(DestroyComponent)
     };
 }

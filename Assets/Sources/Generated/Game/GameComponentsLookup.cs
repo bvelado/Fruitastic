@@ -8,21 +8,57 @@
 //------------------------------------------------------------------------------
 public static class GameComponentsLookup {
 
-    public const int GameTime = 0;
-    public const int Player = 1;
-    public const int TickChanged = 2;
+    public const int Buyable = 0;
+    public const int Destroy = 1;
+    public const int Fruit = 2;
+    public const int FruitSlotChanged = 3;
+    public const int FruitSlot = 4;
+    public const int GameTime = 5;
+    public const int Growing = 6;
+    public const int Locked = 7;
+    public const int Planted = 8;
+    public const int Player = 9;
+    public const int PlayerMoneyChanged = 10;
+    public const int PlayerMoney = 11;
+    public const int Producing = 12;
+    public const int Seed = 13;
+    public const int TickChanged = 14;
 
-    public const int TotalComponents = 3;
+    public const int TotalComponents = 15;
 
     public static readonly string[] componentNames = {
+        "Buyable",
+        "Destroy",
+        "Fruit",
+        "FruitSlotChanged",
+        "FruitSlot",
         "GameTime",
+        "Growing",
+        "Locked",
+        "Planted",
         "Player",
+        "PlayerMoneyChanged",
+        "PlayerMoney",
+        "Producing",
+        "Seed",
         "TickChanged"
     };
 
     public static readonly System.Type[] componentTypes = {
+        typeof(BuyableComponent),
+        typeof(DestroyComponent),
+        typeof(FruitComponent),
+        typeof(FruitSlotChangedComponent),
+        typeof(FruitSlotComponent),
         typeof(GameTimeComponent),
+        typeof(GrowingComponent),
+        typeof(LockedComponent),
+        typeof(PlantedComponent),
         typeof(PlayerComponent),
+        typeof(PlayerMoneyChangedComponent),
+        typeof(PlayerMoneyComponent),
+        typeof(ProducingComponent),
+        typeof(SeedComponent),
         typeof(TickChangedComponent)
     };
 }
