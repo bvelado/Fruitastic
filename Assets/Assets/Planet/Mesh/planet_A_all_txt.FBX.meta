@@ -1,0 +1,148 @@
+fileFormatVersion: 2
+guid: 55fcaea3887699645b6b7b4e507b3a0b
+timeCreated: 1511008774
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: SM_FruitStock
+    100004: SM_GrainShop
+    100006: SM_LegumeStock
+    100008: SM_Planet
+    100010: SM_PlanTriangles
+    100012: SM_SellBank
+    400000: //RootNode
+    400002: SM_FruitStock
+    400004: SM_GrainShop
+    400006: SM_LegumeStock
+    400008: SM_Planet
+    400010: SM_PlanTriangles
+    400012: SM_SellBank
+    2300000: SM_FruitStock
+    2300002: SM_GrainShop
+    2300004: SM_LegumeStock
+    2300006: SM_Planet
+    2300008: SM_PlanTriangles
+    2300010: SM_SellBank
+    3300000: SM_FruitStock
+    3300002: SM_GrainShop
+    3300004: SM_LegumeStock
+    3300006: SM_Planet
+    3300008: SM_PlanTriangles
+    3300010: SM_SellBank
+    4300000: SM_Planet
+    4300002: SM_FruitStock
+    4300004: SM_SellBank
+    4300006: SM_GrainShop
+    4300008: SM_LegumeStock
+    4300010: SM_PlanTriangles
+    9500000: //RootNode
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_FruitStock
+    second: {fileID: 2100000, guid: 5d569a5a1ef98a8478fea4623f92a4c4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_LegumeStock
+    second: {fileID: 2100000, guid: 2ca2bdc1851610848a92e44c39e4a118, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_PlanetA
+    second: {fileID: 2100000, guid: aab0cd22a7164e4469bd20ed37f5d64d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_SellBank
+    second: {fileID: 2100000, guid: 935c6d6048502cb4b961a50b38d98eb9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_TrianglePlan
+    second: {fileID: 2100000, guid: 39b47ae08699445469c682b856f8090d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SM_GrainShop
+    second: {fileID: 2100000, guid: 0842b5bf0b637aa4494cfd2f11592b51, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
