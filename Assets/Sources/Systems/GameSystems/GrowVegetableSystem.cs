@@ -25,6 +25,9 @@ public class GrowVegetableSystem : ReactiveSystem<GameEntity>
                     {
                         growingEntity.isSeed = false;
                         growingEntity.RemoveGrowing();
+
+                        growingEntity.isStored = true;
+                        growingEntity.RemovePlanted();
                     }
                     else
                     {

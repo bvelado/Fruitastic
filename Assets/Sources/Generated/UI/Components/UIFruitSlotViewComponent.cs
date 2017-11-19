@@ -11,7 +11,7 @@ public partial class UIEntity {
     public FruitSlotViewComponent fruitSlotView { get { return (FruitSlotViewComponent)GetComponent(UIComponentsLookup.FruitSlotView); } }
     public bool hasFruitSlotView { get { return HasComponent(UIComponentsLookup.FruitSlotView); } }
 
-    public void AddFruitSlotView(int newIndex, FruitSlotView newView) {
+    public void AddFruitSlotView(int newIndex, GrowingSlotView newView) {
         var index = UIComponentsLookup.FruitSlotView;
         var component = CreateComponent<FruitSlotViewComponent>(index);
         component.Index = newIndex;
@@ -19,7 +19,7 @@ public partial class UIEntity {
         AddComponent(index, component);
     }
 
-    public void ReplaceFruitSlotView(int newIndex, FruitSlotView newView) {
+    public void ReplaceFruitSlotView(int newIndex, GrowingSlotView newView) {
         var index = UIComponentsLookup.FruitSlotView;
         var component = CreateComponent<FruitSlotViewComponent>(index);
         component.Index = newIndex;

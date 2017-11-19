@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-public class InfoPanelView : MonoBehaviour, ISelectedEntityChangedListener {
+public class MarketInfoPanelView : MonoBehaviour, ISelectedEntityChangedListener {
 
     [SerializeField]
     private UIText nameText;

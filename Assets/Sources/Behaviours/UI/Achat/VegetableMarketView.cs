@@ -7,8 +7,6 @@ public class VegetableMarketView : MonoBehaviour
 
     [SerializeField]
     private VegetableData vegetable;
-    [SerializeField]
-    private InfoPanelView infoPanelView;
     private Button button;
 
     private void Start()

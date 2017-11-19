@@ -38,7 +38,7 @@ public class PlantButton : MonoBehaviour, ISelectedEntityChangedListener
             return;
         }
 
-        if(entity.isStored && (!entity.hasFruit || !entity.hasVegetable)) {
+        if(entity.isStored && (!entity.hasFruit || !entity.hasVegetable) && entity.isSeed) {
             button.interactable = true;
         } else
         {
