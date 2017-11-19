@@ -1,9 +1,25 @@
 fileFormatVersion: 2
-guid: 53bdee3941858d4478c96064cc327d87
-timeCreated: 1511044261
+guid: 4918c987a1da6ab44b1bd4e4f5760e70
+timeCreated: 1511097262
 licenseType: Free
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: ringardlogo_0
+    21300002: ringardlogo_1
+    21300004: ringardlogo_2
+    21300006: ringardlogo_3
+    21300008: ringardlogo_4
+    21300010: ringardlogo_5
+    21300012: ringardlogo_6
+    21300014: ringardlogo_7
+    21300016: ringardlogo_8
+    21300018: ringardlogo_9
+    21300020: ringardlogo_10
+    21300022: ringardlogo_11
+    21300024: ringardlogo_12
+    21300026: ringardlogo_13
+    21300028: ringardlogo_14
+    21300030: ringardlogo_15
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -31,7 +47,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: -1
     mipBias: -1
     wrapU: 1
@@ -40,9 +56,9 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
@@ -76,7 +92,21 @@ TextureImporter:
     overridden: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: ringardlogo_1
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 364
+        width: 628
+        height: 279
+      alignment: 9
+      pivot: {x: 0.51397055, y: 0.5179692}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
     outline: []
     physicsShape: []
   spritePackingTag: 
