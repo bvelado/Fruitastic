@@ -23639,7 +23639,7 @@ MonoBehaviour:
   _anamorphicFlaresAntiflicker: 1
   _anamorphicFlaresUltra: 0
   _anamorphicFlaresThreshold: 0.44
-  _anamorphicFlaresSpread: 0.782
+  _anamorphicFlaresSpread: 0.253
   _anamorphicFlaresVertical: 0
   _anamorphicFlaresTint: {r: 0.5, g: 0.5, b: 1, a: 0}
   _depthOfField: 0
@@ -23714,7 +23714,7 @@ MonoBehaviour:
   _sunFlaresRotationDeadZone: 0
   _blur: 0
   _blurIntensity: 1
-  isDirty: 0
+  isDirty: 1
   bMat: {fileID: 0}
 --- !u!114 &1970285781
 MonoBehaviour:
