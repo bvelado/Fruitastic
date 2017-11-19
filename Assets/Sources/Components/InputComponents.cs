@@ -7,6 +7,11 @@ public class BuyFruitComponent : IComponent
 }
 
 [Input]
+public class BuySelectedComponent : IComponent
+{
+}
+
+[Input]
 public class BuyFruitSlotComponent : IComponent
 {
     public int Index;
@@ -36,3 +41,14 @@ public class SellVegetableComponent : IComponent
     public GameEntity Entity;
 }
 
+[Input]
+public class ChangeTabComponent : IComponent
+{
+    public ETab Tab;
+}
+
+[Input]
+public class PlantSelectedEntityComponent : IComponent
+{
+    public GameEntity Entity;
+}

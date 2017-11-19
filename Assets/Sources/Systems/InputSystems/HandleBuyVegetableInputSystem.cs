@@ -4,17 +4,20 @@ using System.Collections.Generic;
 public class HandleBuyVegetableInputSystem : ReactiveSystem<InputEntity>
 {
     Contexts _contexts;
+    IGroup<GameEntity> _observed;
 
     public HandleBuyVegetableInputSystem(Contexts contexts) : base(contexts.input)
     {
         _contexts = contexts;
+        _observed = contexts.game.GetGroup(GameMatcher.AllOf(GameMatcher.Stored).AnyOf(GameMatcher.Fruit, GameMatcher.Vegetable));
     }
 
     protected override void Execute(List<InputEntity> entities)
     {
         foreach (var e in entities)
         {
-            if (_contexts.game.playerMoney.Money > e.buyVegetable.VegetableData.SeedBuyPrice)
+            if (_contexts.game.playerMoney.Money > e.buyVegetable.VegetableData.SeedBuyPrice && 
+                _observed.count < GameParametersManager.Instance.Parameters.MAX_STOCK_SLOTS)
             {
                 DoBuy(e);
             }
@@ -42,7 +45,11 @@ public class HandleBuyVegetableInputSystem : ReactiveSystem<InputEntity>
     private void DoBuy(InputEntity e)
     {
         _contexts.game.ReplacePlayerMoney(_contexts.game.playerMoney.Money - e.buyVegetable.VegetableData.SeedBuyPrice);
-        _contexts.game.CreateEntity().AddVegetable(e.buyVegetable.VegetableData);
+        var v = _contexts.game.CreateEntity();
+        v.AddVegetable(e.buyVegetable.VegetableData);
+        v.isStored = true;
+        _contexts.game.isSelected = false;
+        v.isSelected = true;
     }
 
     private void DoNotBuy(InputEntity e)

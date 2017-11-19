@@ -4,19 +4,19 @@ using Entitas;
 public class GrowFruitSystem : ReactiveSystem<GameEntity> {
 
     private Contexts _contexts;
-    private IGroup<GameEntity> growingEntities;
+    private IGroup<GameEntity> _growingEntities;
 
     public GrowFruitSystem(Contexts contexts) : base(contexts.game)
     {
         _contexts = contexts;
-        growingEntities = contexts.game.GetGroup(GameMatcher.AllOf(GameMatcher.Fruit, GameMatcher.Planted, GameMatcher.Seed));
+        _growingEntities = contexts.game.GetGroup(GameMatcher.AllOf(GameMatcher.Fruit, GameMatcher.Planted, GameMatcher.Seed));
     }
 
     protected override void Execute(List<GameEntity> entities)
     {
         foreach(var e in entities)
         {
-            foreach(var growingEntity in growingEntities.GetEntities())
+            foreach(var growingEntity in _growingEntities.GetEntities())
             {
                 if (growingEntity.hasGrowing)
                 {

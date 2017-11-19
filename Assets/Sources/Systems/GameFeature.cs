@@ -9,6 +9,11 @@ public class GameFeature : Feature {
         Add(new NotifyTickChangedListenersSystem(contexts));
         Add(new NotifyPlayerMoneyChangedSystem(contexts));
         Add(new NotifyFruitSlotChangedSystem(contexts));
+        Add(new NotifyStoredEntitiesNumberChangedSystem(contexts));
+        Add(new NotifySelectedEntityChangedSystem(contexts));
+        Add(new NotifyPlantedFruitChangedSystem(contexts));
+        Add(new NotifyGrowingEntityChangedSystem(contexts));
+        Add(new NotifyProducingEntityChangedSystem(contexts));
         Add(new GrowFruitSystem(contexts));
         Add(new ProduceFruitSystem(contexts));
         Add(new GrowVegetableSystem(contexts));

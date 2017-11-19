@@ -12,14 +12,11 @@ MonoBehaviour:
   m_Name: Apple
   m_EditorClassIdentifier: 
   Name: Apple
-  Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
-    molestie nibh eu sapien porttitor finibus. Maecenas tempor dignissim quam. Pellentesque
-    habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
-    Fusce lobortis ante id augue convallis hendrerit. Cras pharetra vestibulum feugiat.
-    Nulla a sapien urna. Nam interdum nibh vitae nisl feugiat ornare aliquet non odio.
-    Vestibulum ligula mauris, bibendum id leo in, feugiat tempor mauris.
-  SeedBuyPrice: 120
+  Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+  SeedBuyPrice: 2
   SeedSellPrice: 30
   FruitSellPrice: 20
-  GrowthDuration: 300
-  Frequency: 30
+  GrowthDuration: 800
+  Frequency: 200
+  FruitIcon: {fileID: 0}
+  SeedIcon: {fileID: 0}

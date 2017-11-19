@@ -1,6 +1,7 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
-public class InfoPanelView : MonoBehaviour {
+public class InfoPanelView : MonoBehaviour, ISelectedEntityChangedListener {
 
     [SerializeField]
     private UIText nameText;
@@ -9,7 +10,21 @@ public class InfoPanelView : MonoBehaviour {
     [SerializeField]
     private UIText priceText;
 
-    public void Display(FruitData fruit)
+    UIEntity e;
+
+    private void OnEnable()
+    {
+        e = Contexts.sharedInstance.uI.CreateEntity();
+        e.AddSelectedEntityChanged(this);
+    }
+
+    private void OnDisable()
+    {
+        if (e.isEnabled && e.hasSelectedEntityChanged)
+            e.Destroy();
+    }
+
+    private void Display(FruitData fruit)
     {
         nameText.content = fruit.Name;
         descriptionText.content = fruit.Description;
@@ -20,7 +35,7 @@ public class InfoPanelView : MonoBehaviour {
         priceText.Apply();
     }
 
-    public void Display(VegetableData vegetable)
+    private void Display(VegetableData vegetable)
     {
         nameText.content = vegetable.Name;
         descriptionText.content = vegetable.Description;
@@ -31,4 +46,15 @@ public class InfoPanelView : MonoBehaviour {
         priceText.Apply();
     }
 
+    public void SelectedEntityChanged(GameEntity entity)
+    {
+        if(entity != null)
+        {
+            if (entity.hasFruit)
+                Display(entity.fruit.FruitData);
+
+            if (entity.hasVegetable)
+                Display(entity.vegetable.VegetableData);
+        }
+    }
 }

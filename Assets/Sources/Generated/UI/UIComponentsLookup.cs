@@ -11,16 +11,26 @@ public static class UIComponentsLookup {
     public const int Destroy = 0;
     public const int FruitSlotChanged = 1;
     public const int FruitSlotView = 2;
-    public const int PlayerMoneyChanged = 3;
-    public const int TickChanged = 4;
+    public const int GrowingEntityChanged = 3;
+    public const int PlantedEntityChanged = 4;
+    public const int PlayerMoneyChanged = 5;
+    public const int ProducingEntityChanged = 6;
+    public const int SelectedEntityChanged = 7;
+    public const int StoredEntitiesNumberChanged = 8;
+    public const int TickChanged = 9;
 
-    public const int TotalComponents = 5;
+    public const int TotalComponents = 10;
 
     public static readonly string[] componentNames = {
         "Destroy",
         "FruitSlotChanged",
         "FruitSlotView",
+        "GrowingEntityChanged",
+        "PlantedEntityChanged",
         "PlayerMoneyChanged",
+        "ProducingEntityChanged",
+        "SelectedEntityChanged",
+        "StoredEntitiesNumberChanged",
         "TickChanged"
     };
 
@@ -28,7 +38,12 @@ public static class UIComponentsLookup {
         typeof(DestroyComponent),
         typeof(FruitSlotChangedComponent),
         typeof(FruitSlotViewComponent),
+        typeof(GrowingEntityChangedComponent),
+        typeof(PlantedEntityChangedComponent),
         typeof(PlayerMoneyChangedComponent),
+        typeof(ProducingEntityChangedComponent),
+        typeof(SelectedEntityChangedComponent),
+        typeof(StoredEntitiesNumberChangedComponent),
         typeof(TickChangedComponent)
     };
 }

@@ -10,20 +10,26 @@ public static class InputComponentsLookup {
 
     public const int BuyFruit = 0;
     public const int BuyFruitSlot = 1;
-    public const int BuyVegetable = 2;
-    public const int BuyVegetableSlot = 3;
-    public const int Destroy = 4;
-    public const int SellFruit = 5;
-    public const int SellVegetable = 6;
+    public const int BuySelected = 2;
+    public const int BuyVegetable = 3;
+    public const int BuyVegetableSlot = 4;
+    public const int ChangeTab = 5;
+    public const int Destroy = 6;
+    public const int PlantSelectedEntity = 7;
+    public const int SellFruit = 8;
+    public const int SellVegetable = 9;
 
-    public const int TotalComponents = 7;
+    public const int TotalComponents = 10;
 
     public static readonly string[] componentNames = {
         "BuyFruit",
         "BuyFruitSlot",
+        "BuySelected",
         "BuyVegetable",
         "BuyVegetableSlot",
+        "ChangeTab",
         "Destroy",
+        "PlantSelectedEntity",
         "SellFruit",
         "SellVegetable"
     };
@@ -31,9 +37,12 @@ public static class InputComponentsLookup {
     public static readonly System.Type[] componentTypes = {
         typeof(BuyFruitComponent),
         typeof(BuyFruitSlotComponent),
+        typeof(BuySelectedComponent),
         typeof(BuyVegetableComponent),
         typeof(BuyVegetableSlotComponent),
+        typeof(ChangeTabComponent),
         typeof(DestroyComponent),
+        typeof(PlantSelectedEntityComponent),
         typeof(SellFruitComponent),
         typeof(SellVegetableComponent)
     };

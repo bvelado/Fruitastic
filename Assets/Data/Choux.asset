@@ -12,14 +12,10 @@ MonoBehaviour:
   m_Name: Choux
   m_EditorClassIdentifier: 
   Name: Xu
-  Description: Vestibulum eget laoreet nisl, sit amet interdum arcu. Cras gravida
-    vel magna at lacinia. Proin lacinia viverra lobortis. Cras fringilla ipsum eget
-    metus sollicitudin, vel dignissim turpis finibus. Sed vel consectetur sapien,
-    et molestie lorem. Orci varius natoque penatibus et magnis dis parturient montes,
-    nascetur ridiculus mus. Nam blandit mauris id justo vestibulum, sit amet rutrum
-    sapien malesuada. Maecenas purus leo, interdum in convallis vestibulum, placerat
-    eu arcu.
+  Description: Vestibulum eget laoreet nisl, sit amet interdum arcu.
   SeedBuyPrice: 8
   SeedSellPrice: 2
   VegetableSellPrice: 0
   GrowthDuration: 1152000
+  VegetableIcon: {fileID: 0}
+  SeedIcon: {fileID: 0}
