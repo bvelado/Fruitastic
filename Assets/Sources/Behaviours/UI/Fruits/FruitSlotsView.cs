@@ -2,7 +2,7 @@
 using Entitas;
 using UnityEngine;
 
-public class FruitSlotsView : MonoBehaviour, ITickChangedListener, IPlantedEntityChangedListener, IGrowingEntityChangedListener {
+public class FruitSlotsView : MonoBehaviour, ITickChangedListener, IGrowingEntityChangedListener, IProducingEntityChangedListener {
 
     [SerializeField]
     private FruitSlotView[] Slots;
@@ -28,8 +28,8 @@ public class FruitSlotsView : MonoBehaviour, ITickChangedListener, IPlantedEntit
 
         e = Contexts.sharedInstance.uI.CreateEntity();
         e.AddTickChanged(this);
-        e.AddPlantedEntityChanged(this);
         e.AddGrowingEntityChanged(this);
+        e.AddProducingEntityChanged(this);
     }
 
     private void OnDisable()
@@ -66,26 +66,15 @@ public class FruitSlotsView : MonoBehaviour, ITickChangedListener, IPlantedEntit
         //}        
     }
 
-    public void PlantedEntityChanged(GameEntity entity)
+    public void GrowingEntityChanged(GameEntity entity)
     {
         if (entity.hasFruit)
             UpdateView(entity);
-
-        //if (entity.hasPlanted)
-        //    UpdateView(entity.planted.SlotIndex);
-        //// Checks if this is actually a fruit
-        //if (_plantedFruits.ContainsEntity(entity))
-        //{
-        //    if(entity.hasFruit && entity.hasPlanted)
-        //    {
-
-        //    }
-        //}
     }
 
-    public void GrowingEntityChanged(GameEntity entity)
+    public void ProducingEntityChanged(GameEntity entity)
     {
-        //if(entity.hasFruit)
-        //    UpdateView(entity);
+        if (entity.hasFruit)
+            UpdateView(entity);
     }
 }

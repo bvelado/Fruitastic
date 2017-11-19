@@ -23,9 +23,10 @@ public class ProduceFruitSystem : ReactiveSystem<GameEntity>
                     if(productingEntity.producing.Elapsed > productingEntity.fruit.FruitData.Frequency)
                     {
                         productingEntity.ReplaceProducing(0);
-                        
+
                         // TODO
                         // DO GENERATE A NEW FRUIT
+                        _contexts.game.ReplacePlayerMoney(_contexts.game.playerMoney.Money + productingEntity.fruit.FruitData.FruitSellPrice);
 
                     } else
                     {
