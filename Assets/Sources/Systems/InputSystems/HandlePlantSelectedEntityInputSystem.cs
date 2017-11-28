@@ -21,7 +21,7 @@ public class HandlePlantSelectedEntityInputSystem : ReactiveSystem<InputEntity>
         {
             if(_contexts.game.isSelected && _contexts.game.selectedEntity.isStored && !_contexts.game.selectedEntity.hasPlanted)
             {
-                if (_contexts.game.selectedEntity.hasFruit)
+                if (_contexts.game.selectedEntity.isFruit)
                 {
                     if(_plantedFruits.count < GameParametersManager.Instance.Parameters.MAX_FRUIT_SLOTS)
                     {
@@ -48,7 +48,7 @@ public class HandlePlantSelectedEntityInputSystem : ReactiveSystem<InputEntity>
                     }
                 }
 
-                if (_contexts.game.selectedEntity.hasVegetable)
+                if (_contexts.game.selectedEntity.isVegetable)
                 {
                     if (_plantedVegetables.count < GameParametersManager.Instance.Parameters.MAX_VEGETABLES_SLOTS)
                     {

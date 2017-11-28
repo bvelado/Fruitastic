@@ -19,7 +19,10 @@ public class VegetableMarketView : MonoBehaviour
     {
         var e = Contexts.sharedInstance.game.CreateEntity();
         e.AddBuyable(vegetable.SeedBuyPrice);
-        e.AddVegetable(vegetable);
+        e.isVegetable = true;
+        e.isSeed = true;
+        e.AddTitle(vegetable.Name);
+        e.AddDescription(vegetable.Description);
         if (Contexts.sharedInstance.game.isSelected)
             Contexts.sharedInstance.game.selectedEntity.isSelected = false;
         e.isSelected = true;

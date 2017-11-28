@@ -54,52 +54,31 @@ public class GrowingSlotsView : MonoBehaviour, IGrowingEntityChangedListener, IP
 
     private void UpdateView(GameEntity entity)
     {
-        if (!entity.hasFruit && GrowableType == EGrowableType.Fruit)
+        if (!entity.isFruit && GrowableType == EGrowableType.Fruit)
             return;
 
-        if (!entity.hasVegetable && GrowableType == EGrowableType.Vegetable)
+        if (!entity.isVegetable && GrowableType == EGrowableType.Vegetable)
             return;
 
-        if(entity.planted.SlotIndex < Slots.Length)
+        if (entity.planted.SlotIndex < Slots.Length)
         {
-            if (entity.hasVegetable)
+            if (entity.hasIcon)
+                Slots[entity.planted.SlotIndex].Icon.sprite = entity.icon.Sprite;
+
+            if (entity.hasGrowing)
             {
-                Slots[entity.planted.SlotIndex].Icon.sprite = entity.vegetable.VegetableData.SeedIcon;
-
-                if (entity.hasGrowing)
-                {
-                    Slots[entity.planted.SlotIndex].GrowthProgress.fillAmount = (entity.growing.Elapsed * 1.0f) / (entity.vegetable.VegetableData.GrowthDuration * 1.0f);
-                }
-                else
-                {
-                    Slots[entity.planted.SlotIndex].GrowthProgress.fillAmount = 0f;
-                }
-            }
-                
-
-            if (entity.hasFruit)
+                Slots[entity.planted.SlotIndex].GrowthProgress.fillAmount = (entity.growing.Elapsed * 1.0f) / (entity.growable.Duration * 1.0f);
+            } else if (entity.hasProducing)
             {
-                if (entity.hasGrowing)
-                    Slots[entity.planted.SlotIndex].Icon.sprite = entity.fruit.FruitData.SeedIcon;
-                if (entity.hasProducing)
-                    Slots[entity.planted.SlotIndex].Icon.sprite = entity.fruit.FruitData.FruitIcon;
-
-                if (entity.hasGrowing)
-                {
-                    Slots[entity.planted.SlotIndex].GrowthProgress.fillAmount = (entity.growing.Elapsed * 1.0f) / (entity.fruit.FruitData.GrowthDuration * 1.0f);
-                }
-                else
-                {
-                    Slots[entity.planted.SlotIndex].GrowthProgress.fillAmount = 0f;
-                }
-                if (entity.hasProducing)
-                {
-                    Slots[entity.planted.SlotIndex].ProductionProgress.fillAmount = (entity.producing.Elapsed * 1.0f) / (entity.fruit.FruitData.Frequency * 1.0f);
-                }
+                Slots[entity.planted.SlotIndex].ProductionProgress.fillAmount = (entity.producing.Elapsed * 1.0f) / (entity.productor.Frequency * 1.0f);
             }
-
-            InfoPanelView.Display(entity);
+            else
+            {
+                Slots[entity.planted.SlotIndex].GrowthProgress.fillAmount = 0f;
+            }
         }
+
+        InfoPanelView.Display(entity);
     }
 
     private void ClearSlot(int index)

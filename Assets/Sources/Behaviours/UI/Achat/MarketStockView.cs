@@ -37,10 +37,9 @@ public class MarketStockView : MonoBehaviour, IStoredEntitiesNumberChangedListen
         {
             var stockItem = Instantiate(Prefab, Container);
 
-            if (storedEntity.hasFruit)
-                stockItem.Icon.sprite = storedEntity.fruit.FruitData.FruitIcon;
-            if(storedEntity.hasVegetable)
-                stockItem.Icon.sprite = storedEntity.vegetable.VegetableData.VegetableIcon;
+            if (storedEntity.hasIcon)
+                stockItem.Icon.sprite = storedEntity.icon.Sprite;
+
             stockItem.Button.onClick.AddListener(() =>
             {
                 GameEntity entity = storedEntity;

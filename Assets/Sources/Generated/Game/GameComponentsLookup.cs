@@ -9,41 +9,50 @@
 public static class GameComponentsLookup {
 
     public const int Buyable = 0;
-    public const int Destroy = 1;
-    public const int Fruit = 2;
-    public const int FruitSlotChanged = 3;
-    public const int FruitSlot = 4;
-    public const int GameTime = 5;
-    public const int Growing = 6;
-    public const int GrowingEntityChanged = 7;
-    public const int Locked = 8;
-    public const int Planted = 9;
-    public const int PlantedEntityChanged = 10;
-    public const int Player = 11;
-    public const int PlayerMoneyChanged = 12;
-    public const int PlayerMoney = 13;
-    public const int Producing = 14;
-    public const int ProducingEntityChanged = 15;
-    public const int Seed = 16;
-    public const int Selected = 17;
-    public const int SelectedEntityChanged = 18;
-    public const int Stored = 19;
-    public const int StoredEntitiesNumberChanged = 20;
-    public const int TickChanged = 21;
-    public const int Vegetable = 22;
-    public const int VegetableSlot = 23;
+    public const int Description = 1;
+    public const int Destroy = 2;
+    public const int Fruit = 3;
+    public const int FruitSlotChanged = 4;
+    public const int FruitSlot = 5;
+    public const int GameTime = 6;
+    public const int Growable = 7;
+    public const int Growing = 8;
+    public const int GrowingEntityChanged = 9;
+    public const int Icon = 10;
+    public const int Locked = 11;
+    public const int Planted = 12;
+    public const int PlantedEntityChanged = 13;
+    public const int Player = 14;
+    public const int PlayerMoneyChanged = 15;
+    public const int PlayerMoney = 16;
+    public const int Producing = 17;
+    public const int ProducingEntityChanged = 18;
+    public const int Productor = 19;
+    public const int Seed = 20;
+    public const int Selected = 21;
+    public const int SelectedEntityChanged = 22;
+    public const int Sellable = 23;
+    public const int Stored = 24;
+    public const int StoredEntitiesNumberChanged = 25;
+    public const int TickChanged = 26;
+    public const int Title = 27;
+    public const int Vegetable = 28;
+    public const int VegetableSlot = 29;
 
-    public const int TotalComponents = 24;
+    public const int TotalComponents = 30;
 
     public static readonly string[] componentNames = {
         "Buyable",
+        "Description",
         "Destroy",
         "Fruit",
         "FruitSlotChanged",
         "FruitSlot",
         "GameTime",
+        "Growable",
         "Growing",
         "GrowingEntityChanged",
+        "Icon",
         "Locked",
         "Planted",
         "PlantedEntityChanged",
@@ -52,25 +61,31 @@ public static class GameComponentsLookup {
         "PlayerMoney",
         "Producing",
         "ProducingEntityChanged",
+        "Productor",
         "Seed",
         "Selected",
         "SelectedEntityChanged",
+        "Sellable",
         "Stored",
         "StoredEntitiesNumberChanged",
         "TickChanged",
+        "Title",
         "Vegetable",
         "VegetableSlot"
     };
 
     public static readonly System.Type[] componentTypes = {
         typeof(BuyableComponent),
+        typeof(DescriptionComponent),
         typeof(DestroyComponent),
         typeof(FruitComponent),
         typeof(FruitSlotChangedComponent),
         typeof(FruitSlotComponent),
         typeof(GameTimeComponent),
+        typeof(GrowableComponent),
         typeof(GrowingComponent),
         typeof(GrowingEntityChangedComponent),
+        typeof(IconComponent),
         typeof(LockedComponent),
         typeof(PlantedComponent),
         typeof(PlantedEntityChangedComponent),
@@ -79,12 +94,15 @@ public static class GameComponentsLookup {
         typeof(PlayerMoneyComponent),
         typeof(ProducingComponent),
         typeof(ProducingEntityChangedComponent),
+        typeof(ProductorComponent),
         typeof(SeedComponent),
         typeof(SelectedComponent),
         typeof(SelectedEntityChangedComponent),
+        typeof(SellableComponent),
         typeof(StoredComponent),
         typeof(StoredEntitiesNumberChangedComponent),
         typeof(TickChangedComponent),
+        typeof(TitleComponent),
         typeof(VegetableComponent),
         typeof(VegetableSlotComponent)
     };

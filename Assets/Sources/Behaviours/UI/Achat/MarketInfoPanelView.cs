@@ -24,22 +24,11 @@ public class MarketInfoPanelView : MonoBehaviour, ISelectedEntityChangedListener
             e.Destroy();
     }
 
-    private void Display(FruitData fruit)
+    private void Display(GameEntity fruit)
     {
-        nameText.content = fruit.Name;
-        descriptionText.content = fruit.Description;
-        priceText.content = fruit.SeedBuyPrice.ToString();
-
-        nameText.Apply();
-        descriptionText.Apply();
-        priceText.Apply();
-    }
-
-    private void Display(VegetableData vegetable)
-    {
-        nameText.content = vegetable.Name;
-        descriptionText.content = vegetable.Description;
-        priceText.content = vegetable.SeedBuyPrice.ToString();
+        nameText.content = fruit.title.Content;
+        descriptionText.content = fruit.description.Content;
+        priceText.content = fruit.buyable.Price.ToString();
 
         nameText.Apply();
         descriptionText.Apply();
@@ -48,13 +37,9 @@ public class MarketInfoPanelView : MonoBehaviour, ISelectedEntityChangedListener
 
     public void SelectedEntityChanged(GameEntity entity)
     {
-        if(entity != null)
+        if(entity != null && (entity.isFruit || entity.isVegetable))
         {
-            if (entity.hasFruit)
-                Display(entity.fruit.FruitData);
-
-            if (entity.hasVegetable)
-                Display(entity.vegetable.VegetableData);
+            Display(entity);
         }
     }
 }

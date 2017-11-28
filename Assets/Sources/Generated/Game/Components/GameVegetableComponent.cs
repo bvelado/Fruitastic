@@ -8,25 +8,25 @@
 //------------------------------------------------------------------------------
 public partial class GameEntity {
 
-    public VegetableComponent vegetable { get { return (VegetableComponent)GetComponent(GameComponentsLookup.Vegetable); } }
-    public bool hasVegetable { get { return HasComponent(GameComponentsLookup.Vegetable); } }
+    static readonly VegetableComponent vegetableComponent = new VegetableComponent();
 
-    public void AddVegetable(VegetableData newVegetableData) {
-        var index = GameComponentsLookup.Vegetable;
-        var component = CreateComponent<VegetableComponent>(index);
-        component.VegetableData = newVegetableData;
-        AddComponent(index, component);
-    }
+    public bool isVegetable {
+        get { return HasComponent(GameComponentsLookup.Vegetable); }
+        set {
+            if (value != isVegetable) {
+                var index = GameComponentsLookup.Vegetable;
+                if (value) {
+                    var componentPool = GetComponentPool(index);
+                    var component = componentPool.Count > 0
+                            ? componentPool.Pop()
+                            : vegetableComponent;
 
-    public void ReplaceVegetable(VegetableData newVegetableData) {
-        var index = GameComponentsLookup.Vegetable;
-        var component = CreateComponent<VegetableComponent>(index);
-        component.VegetableData = newVegetableData;
-        ReplaceComponent(index, component);
-    }
-
-    public void RemoveVegetable() {
-        RemoveComponent(GameComponentsLookup.Vegetable);
+                    AddComponent(index, component);
+                } else {
+                    RemoveComponent(index);
+                }
+            }
+        }
     }
 }
 

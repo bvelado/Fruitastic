@@ -46,7 +46,13 @@ public class HandleBuyVegetableInputSystem : ReactiveSystem<InputEntity>
     {
         _contexts.game.ReplacePlayerMoney(_contexts.game.playerMoney.Money - e.buyVegetable.VegetableData.SeedBuyPrice);
         var v = _contexts.game.CreateEntity();
-        v.AddVegetable(e.buyVegetable.VegetableData);
+        v.isVegetable = true;
+        v.isStored = true;
+        v.isSeed = true;
+        v.AddGrowable(e.buyFruit.FruitData.GrowthDuration);
+        v.AddTitle(e.buyFruit.FruitData.Name);
+        v.AddDescription(e.buyFruit.FruitData.Description);
+        v.AddIcon(e.buyFruit.FruitData.SeedIcon);
         v.isStored = true;
         _contexts.game.isSelected = false;
         v.isSelected = true;

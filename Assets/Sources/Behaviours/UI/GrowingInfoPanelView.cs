@@ -27,41 +27,29 @@ public class GrowingInfoPanelView : MonoBehaviour, ISelectedEntityChangedListene
 
     public void Display(GameEntity entity)
     {
-        if(entity!=null && entity.hasFruit)
+        if(entity!=null && entity.isFruit)
         {
             if(entity.hasGrowing)
             {
-                producingText.content = string.Format("{0}%", (1f * entity.growing.Elapsed) / (1f * entity.fruit.FruitData.GrowthDuration));
+                producingText.content = string.Format("{0}%", (1f * entity.growing.Elapsed) / (1f * entity.growable.Duration));
             }
 
             if (entity.hasProducing)
             {
-                producingText.content = string.Format("{0}%", (1f * entity.producing.Elapsed) / (1f * entity.fruit.FruitData.Frequency));
+                producingText.content = string.Format("{0}%", (1f * entity.producing.Elapsed) / (1f * entity.productor.Frequency));
             }
         }
     }
 
     public void SelectedEntityChanged(GameEntity entity)
     {
-        if(entity != null)
+        if(entity != null && entity.hasTitle && entity.hasDescription)
         {
-            if (entity.hasFruit)
-            {
-                nameText.content = entity.fruit.FruitData.Name;
-                descriptionText.content = entity.fruit.FruitData.Description;
+            nameText.content = entity.title.Content;
+            descriptionText.content = entity.description.Content;
 
-                nameText.Apply();
-                descriptionText.Apply();
-            }
-
-            if (entity.hasVegetable)
-            {
-                nameText.content = entity.vegetable.VegetableData.Name;
-                descriptionText.content = entity.vegetable.VegetableData.Description;
-
-                nameText.Apply();
-                descriptionText.Apply();
-            }
+            nameText.Apply();
+            descriptionText.Apply();
         }
     }
 }

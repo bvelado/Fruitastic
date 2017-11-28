@@ -46,8 +46,14 @@ public class HandleBuyFruitInputSystem : ReactiveSystem<InputEntity>
     {
         _contexts.game.ReplacePlayerMoney(_contexts.game.playerMoney.Money - e.buyFruit.FruitData.SeedBuyPrice);
         var fruitEntity = _contexts.game.CreateEntity();
-        fruitEntity.AddFruit(e.buyFruit.FruitData);
+        fruitEntity.isFruit = true;
         fruitEntity.isStored = true;
+        fruitEntity.isSeed = true;
+        fruitEntity.AddGrowable(e.buyFruit.FruitData.GrowthDuration);
+        fruitEntity.AddProductor(e.buyFruit.FruitData.Frequency);
+        fruitEntity.AddTitle(e.buyFruit.FruitData.Name);
+        fruitEntity.AddDescription(e.buyFruit.FruitData.Description);
+        fruitEntity.AddIcon(e.buyFruit.FruitData.SeedIcon);
         _contexts.game.isSelected = false;
         fruitEntity.isSelected = true;
     }

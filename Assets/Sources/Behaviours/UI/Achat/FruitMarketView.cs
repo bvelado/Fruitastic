@@ -17,8 +17,11 @@ public class FruitMarketView : MonoBehaviour {
     private void HandleButtonClicked()
     {
         var e = Contexts.sharedInstance.game.CreateEntity();
+        e.isFruit = true;
         e.AddBuyable(fruit.SeedBuyPrice);
-        e.AddFruit(fruit);
+        e.AddTitle(fruit.Name);
+        e.AddDescription(fruit.Description);
+        e.isSeed = true;
         if (Contexts.sharedInstance.game.isSelected)
             Contexts.sharedInstance.game.selectedEntity.isSelected = false;
         e.isSelected = true;

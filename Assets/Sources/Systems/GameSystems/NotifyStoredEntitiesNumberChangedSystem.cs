@@ -25,7 +25,7 @@ public class NotifyStoredEntitiesNumberChangedSystem : ReactiveSystem<GameEntity
 
     protected override bool Filter(GameEntity entity)
     {
-        if (entity.isStored && (entity.hasFruit || entity.hasVegetable))
+        if (entity.isStored && (entity.isFruit || entity.isVegetable))
             return true;
 
         return false;

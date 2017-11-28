@@ -14,7 +14,7 @@ public class HandleSellVegetableInputSystem : ReactiveSystem<InputEntity>
     {
         foreach (var e in entities)
         {
-            _contexts.game.ReplacePlayerMoney(_contexts.game.playerMoney.Money + e.sellVegetable.Entity.vegetable.VegetableData.SeedSellPrice);
+            _contexts.game.ReplacePlayerMoney(_contexts.game.playerMoney.Money + e.sellVegetable.Entity.sellable.Price);
             e.sellVegetable.Entity.isDestroy = true;
         }
     }

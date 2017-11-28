@@ -1,5 +1,6 @@
 ﻿using Entitas;
 using Entitas.CodeGeneration.Attributes;
+using UnityEngine;
 
 // Player
 
@@ -27,13 +28,47 @@ public class GameTimeComponent : IComponent
 [Game]
 public class FruitComponent : IComponent
 {
-    public FruitData FruitData;
+}
+
+[Game]
+public class TitleComponent : IComponent
+{
+    public string Content;
+}
+
+[Game]
+public class DescriptionComponent : IComponent
+{
+    public string Content;
+}
+
+[Game]
+public class BuyableComponent : IComponent
+{
+    public long Price;
+}
+
+[Game]
+public class SellableComponent : IComponent
+{
+    public long Price;
+}
+
+[Game]
+public class GrowableComponent : IComponent
+{
+    public long Duration;
+}
+
+[Game]
+public class ProductorComponent : IComponent
+{
+    public long Frequency;
 }
 
 [Game]
 public class VegetableComponent : IComponent
 {
-    public VegetableData VegetableData;
 }
 
 [Game]
@@ -92,7 +127,7 @@ public class LockedComponent : IComponent
 }
 
 [Game]
-public class BuyableComponent : IComponent
+public class IconComponent : IComponent
 {
-    public long Price;
+    public Sprite Sprite;
 }

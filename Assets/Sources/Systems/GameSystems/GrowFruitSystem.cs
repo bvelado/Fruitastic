@@ -20,7 +20,7 @@ public class GrowFruitSystem : ReactiveSystem<GameEntity> {
             {
                 if (growingEntity.hasGrowing)
                 {
-                    if (growingEntity.growing.Elapsed > growingEntity.fruit.FruitData.GrowthDuration)
+                    if (growingEntity.growing.Elapsed > growingEntity.growable.Duration)
                     {
                         growingEntity.isSeed = false;
                         growingEntity.RemoveGrowing();
