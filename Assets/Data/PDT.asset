@@ -16,6 +16,6 @@ MonoBehaviour:
   SeedBuyPrice: 4
   SeedSellPrice: 1
   VegetableSellPrice: 0
-  GrowthDuration: 6000
+  GrowthDuration: 500
   VegetableIcon: {fileID: 0}
   SeedIcon: {fileID: 0}

@@ -1,7 +1,8 @@
 ﻿using System;
 using UnityEngine;
 
-public class MarketInfoPanelView : MonoBehaviour, ISelectedEntityChangedListener {
+public class MarketInfoPanelView : MonoBehaviour, ISelectedEntityChangedListener
+{
 
     [SerializeField]
     private UIText nameText;
@@ -24,20 +25,31 @@ public class MarketInfoPanelView : MonoBehaviour, ISelectedEntityChangedListener
             e.Destroy();
     }
 
-    private void Display(GameEntity fruit)
+    private void Display(GameEntity entity)
     {
-        nameText.content = fruit.title.Content;
-        descriptionText.content = fruit.description.Content;
-        priceText.content = fruit.buyable.Price.ToString();
+        if (entity.hasTitle)
+        {
+            nameText.content = entity.title.Content;
+            nameText.Apply();
+        }
 
-        nameText.Apply();
-        descriptionText.Apply();
-        priceText.Apply();
+        if (entity.hasDescription)
+        {
+            descriptionText.content = entity.description.Content;
+            descriptionText.Apply();
+        }
+
+        if (entity.hasBuyable)
+        {
+            priceText.content = entity.buyable.Price.ToString();
+            priceText.Apply();
+        }
+
     }
 
     public void SelectedEntityChanged(GameEntity entity)
     {
-        if(entity != null && (entity.isFruit || entity.isVegetable))
+        if (entity != null && (entity.isFruit || entity.isVegetable))
         {
             Display(entity);
         }
