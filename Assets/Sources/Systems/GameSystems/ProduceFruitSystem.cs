@@ -16,25 +16,31 @@ public class ProduceFruitSystem : ReactiveSystem<GameEntity>
     {
         foreach(var e in entities)
         {
-            foreach(var productingEntity in producingEntities)
+            foreach(var producingEntity in producingEntities)
             {
-                if (productingEntity.hasProducing)
+                if (producingEntity.hasProducing)
                 {
-                    if(productingEntity.producing.Elapsed > productingEntity.productor.Frequency)
+                    if(producingEntity.producing.Elapsed > producingEntity.productor.Frequency)
                     {
-                        productingEntity.ReplaceProducing(0);
+                        producingEntity.ReplaceProducing(0);
 
                         // TODO
                         // DO GENERATE A NEW FRUIT
-                        _contexts.game.ReplacePlayerMoney(_contexts.game.playerMoney.Money + productingEntity.sellable.Price);
+                        var producedEntity = _contexts.game.CreateEntity();
+                        producedEntity.AddSellable(1000000);
+                        producedEntity.RemovePlanted();
+                        producedEntity.isStored = true;
+                        producedEntity.RemoveGrowable();
+                        producedEntity.RemoveProductor();
+                        producedEntity.RemoveProducing();
 
                     } else
                     {
-                        productingEntity.ReplaceProducing(productingEntity.producing.Elapsed + 1);
+                        producingEntity.ReplaceProducing(producingEntity.producing.Elapsed + 1);
                     }
                 } else
                 {
-                    productingEntity.AddProducing(0);
+                    producingEntity.AddProducing(0);
                 }
             }
         }

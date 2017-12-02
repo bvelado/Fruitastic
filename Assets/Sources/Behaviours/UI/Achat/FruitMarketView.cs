@@ -22,6 +22,8 @@ public class FruitMarketView : MonoBehaviour {
         e.AddTitle(fruit.Name);
         e.AddDescription(fruit.Description);
         e.isSeed = true;
+        e.AddGrowable(fruit.GrowthDuration);
+        e.AddProductor(fruit.Frequency);
         if (Contexts.sharedInstance.game.isSelected)
             Contexts.sharedInstance.game.selectedEntity.isSelected = false;
         e.isSelected = true;

@@ -54,10 +54,7 @@ public class GrowingSlotsView : MonoBehaviour, IGrowingEntityChangedListener, IP
 
     private void UpdateView(GameEntity entity)
     {
-        if (!entity.isFruit && GrowableType == EGrowableType.Fruit)
-            return;
-
-        if (!entity.isVegetable && GrowableType == EGrowableType.Vegetable)
+        if (!entity.isFruit && !entity.isVegetable)
             return;
 
         if (entity.planted.SlotIndex < Slots.Length)
@@ -90,7 +87,7 @@ public class GrowingSlotsView : MonoBehaviour, IGrowingEntityChangedListener, IP
 
     public void GrowingEntityChanged(GameEntity entity)
     {
-        if (entity.hasGrowing)
+        if (entity.hasGrowing && entity.hasGrowable)
             UpdateView(entity);
     }
 

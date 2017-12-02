@@ -1,15 +1,15 @@
 ﻿using System.Collections.Generic;
 using Entitas;
 
-public class GrowFruitSystem : ReactiveSystem<GameEntity> {
+public class GrowGrowableSystem : ReactiveSystem<GameEntity> {
 
     private Contexts _contexts;
     private IGroup<GameEntity> _growingEntities;
 
-    public GrowFruitSystem(Contexts contexts) : base(contexts.game)
+    public GrowGrowableSystem(Contexts contexts) : base(contexts.game)
     {
         _contexts = contexts;
-        _growingEntities = contexts.game.GetGroup(GameMatcher.AllOf(GameMatcher.Fruit, GameMatcher.Planted, GameMatcher.Seed));
+        _growingEntities = contexts.game.GetGroup(GameMatcher.AllOf(GameMatcher.Growing, GameMatcher.Growable, GameMatcher.Seed).AnyOf(GameMatcher.Fruit, GameMatcher.Vegetable));
     }
 
     protected override void Execute(List<GameEntity> entities)
